@@ -28,21 +28,33 @@ if (palOrNot){
 // Chiedo all'utente di inserire pari o dispari
 
 do {
-    pariODispari=prompt('Scegli "pari" o "dispari"')
+    pariODispari=prompt('Scegli "pari" o "dispari"');
 }
 while ((pariODispari.toLowerCase())!= "pari" && (pariODispari.toLowerCase())!="dispari")
 
 // Chiedo all'utente di inserire un valore tra 1 e 5
 
 do {
-numeroUtente=prompt("Scegli un numero da 1 a 5")
+numeroUtente=prompt("Scegli un numero da 1 a 5");
+numeroUtente=parseInt(numeroUtente);
 
 }
-while (parseInt(numeroUtente)<1 && parseInt(numeroUtente) > 5) 
+while (numeroUtente<1 && numeroUtente > 5) 
 
 //Genero un numero randomico sfruttanto il possente randomizator
 
-numeroPC= randomizator(1,5)
+numeroPC = randomizator(1,5);
+
+let sommaNumeri = numeroUtente + numeroPC;
+
+let risultato = disparizator(sommaNumeri);
+
+if (risultato==(pariODispari.toLowerCase())){
+    console.log ("Hai vinto complimenti!")
+} else {
+    console.log ("Mi dispiace hai perso!")
+}
+
 
 
 
@@ -50,7 +62,7 @@ numeroPC= randomizator(1,5)
 // ------------------------- Funzioni -------------------------
 
 function palindromator(string){
-for (i=0; i<string.length; i++){
+for (let i=0; i<string.length; i++){
     if (!(string[i]==string[string.length-1-i])){
         return false;
     }
@@ -59,4 +71,14 @@ for (i=0; i<string.length; i++){
 function randomizator (min, max){
     numeroRandom = Math.floor(Math.random()*(max-min+1)+min);
     return numeroRandom
+}
+
+function disparizator (num){
+    if (num%2 == 0){
+        console.log("pari")
+        return "pari"
+    } else {
+        console.log("dispari")
+        return "dispari"
+    }
 }

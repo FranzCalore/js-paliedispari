@@ -22,11 +22,11 @@ console.log(palresult(palOrNot));
 // Procedo alla seconda parte dell'esercizio
 // Chiedo all'utente di inserire pari o dispari
 
-let sceltaUtente = annoyingDispari();
+let sceltaUtente = richiestaPariDispari();
 
 // Chiedo all'utente di inserire un valore tra 1 e 5
 
-let numeroScelto=annoyingDaUnoACinque()
+let numeroScelto=richiestaNumero15()
 
 //Genero un numero randomico sfruttanto il possente randomizator
 
@@ -81,7 +81,7 @@ function chiedoStringaUtente(){
     return stringaMinuscola;
 }
 
-function annoyingDispari(){
+function richiestaPariDispari(){
     do {
         pariODispari = prompt('Scegli "pari" o "dispari"');
     }
@@ -90,7 +90,7 @@ function annoyingDispari(){
     return pariODispari;
 }
 
-function annoyingDaUnoACinque(){
+function richiestaNumero15(){
     do {
         numeroUtente = prompt("Scegli un numero da 1 a 5");
         numeroUtente = parseInt(numeroUtente);

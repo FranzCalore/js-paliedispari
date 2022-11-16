@@ -17,7 +17,7 @@ let stringa = chiedoStringaUtente();
 
 let palOrNot = palindromator(stringa);
 
-palresult(palOrNot);
+console.log(palresult(palOrNot));
 
 // Procedo alla seconda parte dell'esercizio
 // Chiedo all'utente di inserire pari o dispari
@@ -36,7 +36,7 @@ let somma = sommaNumeri(parseInt(numeroScelto),parseInt(numeroPC));
 
 let risultato = disparizator(sommaNumeri);
 
-disparesult(sceltaUtente, risultato);
+console.log(getResult(sceltaUtente, risultato));
 
 
 
@@ -69,9 +69,9 @@ function disparizator(num) {
 
 function palresult(bool){
     if (bool){
-        console.log("La parola è palindroma");
+        return "La parola è palindroma";
     } else {
-        console.log ("La parola non è palindroma")
+        return "La parola non è palindroma";
     }
 }
 
@@ -106,10 +106,10 @@ function sommaNumeri(num1,num2){
     return sum
 }
 
-function disparesult(pariODispari, risultatoDisparizator){
+function getResult(pariODispari, risultatoDisparizator){
     pariODispari=pariODispari.toLowerCase()
     if (risultatoDisparizator == pariODispari) {
-        console.log("Hai vinto complimenti!");
+        return "Hai vinto complimenti!";
     } else {
-        console.log("Mi dispiace hai perso!");
+        return "Mi dispiace hai perso!";
 }}

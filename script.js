@@ -11,48 +11,48 @@ Dichiariamo chi ha vinto. */
 
 //Chiedo all'utente di inserire una parola qualsiasi
 
-stringaUtente=prompt("inserisci una parola");
-stringaMinuscola=stringaUtente.toLowerCase();
+stringaUtente = prompt("inserisci una parola");
+stringaMinuscola = stringaUtente.toLowerCase();
 
 //Inserisco la stringa nel Palindromator
 
-palOrNot=palindromator(stringaMinuscola)
+palOrNot = palindromator(stringaMinuscola);
 
-if (palOrNot){
+if (palOrNot) {
     console.log(stringaUtente + " è palindroma");
 } else {
-    console.log (stringaUtente + " non è palindroma");
+    console.log(stringaUtente + " non è palindroma");
 }
 
 // Procedo alla seconda parte dell'esercizio
 // Chiedo all'utente di inserire pari o dispari
 
 do {
-    pariODispari=prompt('Scegli "pari" o "dispari"');
+    pariODispari = prompt('Scegli "pari" o "dispari"');
 }
-while ((pariODispari.toLowerCase())!= "pari" && (pariODispari.toLowerCase())!="dispari")
+while ((pariODispari.toLowerCase()) != "pari" && (pariODispari.toLowerCase()) != "dispari");
 
 // Chiedo all'utente di inserire un valore tra 1 e 5
 
 do {
-numeroUtente=prompt("Scegli un numero da 1 a 5");
-numeroUtente=parseInt(numeroUtente);
+    numeroUtente = prompt("Scegli un numero da 1 a 5");
+    numeroUtente = parseInt(numeroUtente);
 
 }
-while (numeroUtente<1 && numeroUtente > 5) 
+while (numeroUtente < 1 || numeroUtente > 5);
 
 //Genero un numero randomico sfruttanto il possente randomizator
 
-numeroPC = randomizator(1,5);
+numeroPC = randomizator(1, 5);
 
 let sommaNumeri = numeroUtente + numeroPC;
 
 let risultato = disparizator(sommaNumeri);
 
-if (risultato==(pariODispari.toLowerCase())){
-    console.log ("Hai vinto complimenti!")
+if (risultato == (pariODispari.toLowerCase())) {
+    console.log("Hai vinto complimenti!");
 } else {
-    console.log ("Mi dispiace hai perso!")
+    console.log("Mi dispiace hai perso!");
 }
 
 
@@ -61,24 +61,26 @@ if (risultato==(pariODispari.toLowerCase())){
 
 // ------------------------- Funzioni -------------------------
 
-function palindromator(string){
-for (let i=0; i<string.length; i++){
-    if (!(string[i]==string[string.length-1-i])){
-        return false;
-    }
-} return true}
+function palindromator(string) {
+    for (let i = 0; i < string.length; i++) {
+        if (!(string[i] == string[string.length - 1 - i])) {
+            return false;
+        }
+    } return true
+}
 
-function randomizator (min, max){
-    numeroRandom = Math.floor(Math.random()*(max-min+1)+min);
+function randomizator(min, max) {
+    numeroRandom = Math.floor(Math.random() * (max - min + 1) + min);
     return numeroRandom
 }
 
-function disparizator (num){
-    if (num%2 == 0){
-        console.log("pari")
+function disparizator(num) {
+    if (num % 2 == 0) {
+        console.log("pari");
         return "pari"
     } else {
-        console.log("dispari")
+        console.log("dispari");
         return "dispari"
     }
 }
+

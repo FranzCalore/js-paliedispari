@@ -18,11 +18,7 @@ stringaMinuscola = stringaUtente.toLowerCase();
 
 palOrNot = palindromator(stringaMinuscola);
 
-if (palOrNot) {
-    console.log(stringaUtente + " è palindroma");
-} else {
-    console.log(stringaUtente + " non è palindroma");
-}
+palresult(palOrNot);
 
 // Procedo alla seconda parte dell'esercizio
 // Chiedo all'utente di inserire pari o dispari
@@ -84,3 +80,10 @@ function disparizator(num) {
     }
 }
 
+function palresult(bool){
+    if (bool){
+        console.log("La parola è palindroma");
+    } else {
+        console.log ("La parola non è palindroma")
+    }
+}

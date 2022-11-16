@@ -11,45 +11,32 @@ Dichiariamo chi ha vinto. */
 
 //Chiedo all'utente di inserire una parola qualsiasi
 
-stringaUtente = prompt("inserisci una parola");
-stringaMinuscola = stringaUtente.toLowerCase();
+let stringa = chiedoStringaUtente();
 
 //Inserisco la stringa nel Palindromator
 
-palOrNot = palindromator(stringaMinuscola);
+let palOrNot = palindromator(stringa);
 
 palresult(palOrNot);
 
 // Procedo alla seconda parte dell'esercizio
 // Chiedo all'utente di inserire pari o dispari
 
-do {
-    pariODispari = prompt('Scegli "pari" o "dispari"');
-}
-while ((pariODispari.toLowerCase()) != "pari" && (pariODispari.toLowerCase()) != "dispari");
+let sceltaUtente = annoyingDispari();
 
 // Chiedo all'utente di inserire un valore tra 1 e 5
 
-do {
-    numeroUtente = prompt("Scegli un numero da 1 a 5");
-    numeroUtente = parseInt(numeroUtente);
-
-}
-while (numeroUtente < 1 || numeroUtente > 5);
+let numeroScelto=annoyingDaUnoACinque()
 
 //Genero un numero randomico sfruttanto il possente randomizator
 
-numeroPC = randomizator(1, 5);
+let numeroPC = randomizator(1, 5);
 
-let sommaNumeri = numeroUtente + numeroPC;
+let somma = sommaNumeri(parseInt(numeroScelto),parseInt(numeroPC));
 
 let risultato = disparizator(sommaNumeri);
 
-if (risultato == (pariODispari.toLowerCase())) {
-    console.log("Hai vinto complimenti!");
-} else {
-    console.log("Mi dispiace hai perso!");
-}
+disparesult(sceltaUtente, risultato);
 
 
 
@@ -87,3 +74,42 @@ function palresult(bool){
         console.log ("La parola non è palindroma")
     }
 }
+
+function chiedoStringaUtente(){
+    stringaUtente = prompt("inserisci una parola");
+    stringaMinuscola = stringaUtente.toLowerCase();
+    return stringaMinuscola;
+}
+
+function annoyingDispari(){
+    do {
+        pariODispari = prompt('Scegli "pari" o "dispari"');
+    }
+    while ((pariODispari.toLowerCase()) != "pari" && (pariODispari.toLowerCase()) != "dispari");
+
+    return pariODispari;
+}
+
+function annoyingDaUnoACinque(){
+    do {
+        numeroUtente = prompt("Scegli un numero da 1 a 5");
+        numeroUtente = parseInt(numeroUtente);
+    
+    }
+    while (numeroUtente < 1 || numeroUtente > 5);
+
+    return numeroUtente
+}
+
+function sommaNumeri(num1,num2){
+    sum= num1+num2;
+    return sum
+}
+
+function disparesult(pariODispari, risultatoDisparizator){
+    pariODispari=pariODispari.toLowerCase()
+    if (risultatoDisparizator == pariODispari) {
+        console.log("Hai vinto complimenti!");
+    } else {
+        console.log("Mi dispiace hai perso!");
+}}
